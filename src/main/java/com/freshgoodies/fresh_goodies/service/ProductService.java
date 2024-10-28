@@ -1,7 +1,7 @@
 package com.freshgoodies.fresh_goodies.service;
 
-import com.freshgoodies.fresh_goodies.entity.Product; // Ensure this import is correct
-import com.freshgoodies.fresh_goodies.repository.ProductRepository; // Ensure this import is correct
+import com.freshgoodies.fresh_goodies.entity.Product;
+import com.freshgoodies.fresh_goodies.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,10 +28,6 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Product updateProduct(Long id, Product product) {
-        product.setId(id); // Ensure that setId is available
-        return productRepository.save(product);
-    }
 
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);

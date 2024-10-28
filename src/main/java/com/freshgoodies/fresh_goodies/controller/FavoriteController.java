@@ -12,11 +12,6 @@ public class FavoriteController {
     @Autowired
     private FavoriteService favoriteService;
 
-    @PostMapping("/toggle")
-    public Favorite toggleFavorite(@RequestParam Long userId, @RequestParam Long productId) {
-        return favoriteService.toggleFavorite(userId, productId);
-    }
-
     @GetMapping("/{userId}")
     public List<Favorite> getUserFavorites(@PathVariable Long userId) {
         return favoriteService.getUserFavorites(userId);

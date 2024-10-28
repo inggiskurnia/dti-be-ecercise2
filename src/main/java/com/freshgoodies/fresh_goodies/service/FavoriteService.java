@@ -11,13 +11,6 @@ public class FavoriteService {
     @Autowired
     private FavoriteRepository favoriteRepository;
 
-    public Favorite toggleFavorite(Long userId, Long productId) {
-        Favorite favorite = favoriteRepository.findByUserIdAndProductId(userId, productId)
-                .orElse(new Favorite(userId, productId, true));
-        favorite.setFavorite(!favorite.isFavorite());
-        return favoriteRepository.save(favorite);
-    }
-
     public List<Favorite> getUserFavorites(Long userId) {
         return favoriteRepository.findByUserId(userId);
     }
