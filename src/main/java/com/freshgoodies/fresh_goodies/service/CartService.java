@@ -19,6 +19,10 @@ public class CartService {
         return cartItemRepository.findByUserId(userId);
     }
 
+    public CartItem updateCartItem(Long id, CartItem cartItem) {
+        cartItem.setId(id);
+        return cartItemRepository.save(cartItem);
+    }
 
     public void deleteCartItem(Long id) {
         cartItemRepository.deleteById(id);

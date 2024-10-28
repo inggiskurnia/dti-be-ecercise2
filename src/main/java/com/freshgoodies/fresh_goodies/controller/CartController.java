@@ -22,6 +22,11 @@ public class CartController {
         return cartService.getUserCart(userId);
     }
 
+    @PutMapping("/{id}")
+    public CartItem updateCartItem(@PathVariable Long id, @RequestBody CartItem cartItem) {
+        return cartService.updateCartItem(id, cartItem);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteCartItem(@PathVariable Long id) {
         cartService.deleteCartItem(id);
